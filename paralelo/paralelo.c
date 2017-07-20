@@ -27,7 +27,7 @@ void main(int argc, char *argv[]) {
     begin = omp_get_wtime();
     x = jacobi_method(a, b, x, dimension, pow(10, (int)strtol(argv[3], NULL, 10)));
     end = omp_get_wtime();
-    output_gen(argv[2], (double)(end-begin)/CLOCKS_PER_SEC, x, dimension);
+    output_gen(argv[2], (double)(end-begin), x, dimension);
     for(i = 0; i < dimension; i++) printf("x[%d]: %1.10e\n", i+1, x[i]);
 }
 
